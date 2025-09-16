@@ -42,6 +42,7 @@ trigger.on(
 
         console.log("Assistant joined the room");
         roomState[roomStateKey] = true;
+        const startTimestamp = new Date().toISOString();
 
         assistant.on(AUDIO_STREAM_READY, async ({ track }) => {
             // prettier-ignore
@@ -56,7 +57,7 @@ trigger.on(
                 "-ac", "1",
                 "-ar", "48000",
                 "-i", "pipe:0",
-                "/tmp/output.mp3",
+                `/tmp/audiorecorder-${startTimestamp}.mp3`,
             ]);
 
             const roomConnection = assistant.getRoomConnection();
@@ -99,7 +100,7 @@ trigger.on(
             if (process.env.AWS_S3_ACCESS_KEY_ID && process.env.AWS_S3_SECRET_ACCESS_KEY) {
                 console.log("Uploading audio output to S3...");
 
-                const s3OutputFileName = `${roomStateKey}/${new Date().toISOString()}.mp3`;
+                const s3OutputFileName = `${roomStateKey}/${startTimestamp}.mp3`;
 
                 const s3Client = new S3Client({
                     credentials: {
@@ -109,7 +110,7 @@ trigger.on(
                     region: process.env.AWS_S3_REGION,
                 });
 
-                fs.readFile("/tmp/output.mp3", (err, data) => {
+                fs.readFile(`/tmp/audiorecorder-${startTimestamp}.mp3`, (err, data) => {
                     if (err) {
                         throw err;
                     }
