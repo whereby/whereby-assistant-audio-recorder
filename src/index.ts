@@ -64,7 +64,7 @@ trigger.on(
 
             const audioSink = new AudioSink(track);
 
-            const unsubscribeAudioSink = audioSink.subscribe(({ samples, sampleRate }) => {
+            const unsubscribeAudioSink = audioSink.subscribe(({ samples }) => {
                 if (!ffmpegProcess.stdin.writable) {
                     unsubscribeAudioSink();
                     return;
