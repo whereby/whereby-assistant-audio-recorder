@@ -25,7 +25,7 @@
         "typescript-eslint": "^8.44.0"
     },
     "scripts": {
-        "build": "rm -rf dist && yarn tsc",
+        "build": "rm -rf dist && yarn tsc -p tsconfig.build.json",
         "build:docker": "yarn build && docker build -f ./Dockerfile -t audio_recorder:latest .",
         "build:docker:local": "sh scripts/build-local-docker.sh",
         "clean": "rm -rf dist node_modules",
