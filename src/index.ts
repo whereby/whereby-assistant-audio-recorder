@@ -9,6 +9,8 @@ import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
 const roomState: Record<string, boolean> = {};
 
+const humanRoles = ["owner", "member", "host", "visitor", "granted_visitor", "viewer", "granted_viewer"];
+
 const trigger = new Trigger({
     webhookTriggers: {
         "room.session.started": ({ data: { subdomain, roomName } }) => {
@@ -60,10 +62,23 @@ trigger.on(
                 `/tmp/audiorecorder-${startTimestamp}.mp3`,
             ]);
 
+            const audioSink = new AudioSink(track);
+
+            const unsubscribeAudioSink = audioSink.subscribe(({ samples, sampleRate }) => {
+                if (!ffmpegProcess.stdin.writable) {
+                    unsubscribeAudioSink();
+                    return;
+                }
+
+                ffmpegProcess.stdin.write(samples);
+            });
+
             const roomConnection = assistant.getRoomConnection();
 
-            roomConnection.subscribeToConnectionStatus((connectionStatus) => {
+            const unsubscribeFromConnectionStatus = roomConnection.subscribeToConnectionStatus((connectionStatus) => {
                 if (["left", "kicked"].includes(connectionStatus)) {
+                    unsubscribeFromConnectionStatus();
+
                     console.log("Assistant left the room");
                     roomState[roomStateKey] = false;
 
@@ -73,21 +88,21 @@ trigger.on(
                 }
             });
 
-            const audioSink = new AudioSink(track);
+            const unsubscribeFromRemoteParticipants = roomConnection.subscribeToRemoteParticipants(
+                (remoteParticipants) => {
+                    const humanParticipants = remoteParticipants.filter(({ roleName }) =>
+                        humanRoles.includes(roleName),
+                    );
 
-            audioSink.subscribe(({ samples, sampleRate }) => {
-                if (sampleRate !== 48_000) {
-                    console.error("Invalid sample rate detected. Expected 48Hz stream.", sampleRate);
-                    return;
-                }
+                    // If less than 2 human participants remain, stop recording audio
+                    if (humanParticipants.length <= 1) {
+                        unsubscribeFromRemoteParticipants();
 
-                if (!ffmpegProcess.stdin.writable) {
-                    console.error("Input stream not writeable");
-                    return;
-                }
-
-                ffmpegProcess.stdin.write(samples);
-            });
+                        console.log("Assistant leaving the room");
+                        roomConnection.leaveRoom();
+                    }
+                },
+            );
 
             console.log("Started recording audio...");
 
