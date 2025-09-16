@@ -1,0 +1,33 @@
+{
+    "name": "assistant-example-app",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "main": "src/index.ts",
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.888.0",
+        "@whereby.com/assistant-sdk": "0.0.0-canary-20250916072551",
+        "body-parser": "2.2.0",
+        "dotenv": "^16.4.5",
+        "express": "5.1.0",
+        "zod": "^4.1.1"
+    },
+    "devDependencies": {
+        "@roamhq/wrtc": "github:whereby/node-webrtc#patch/rtc_audio_source",
+        "@types/express": "^4.17.21",
+        "@types/web": "^0.0.267",
+        "eslint": "^9.29.0",
+        "prettier": "^3.5.3",
+        "tsx": "4.20.3",
+        "typescript": "^5.8.3"
+    },
+    "scripts": {
+        "build": "rm -rf dist && yarn tsc",
+        "build:docker": "yarn build && docker build -f ./Dockerfile -t audio_recorder:latest .",
+        "build:docker:local": "sh scripts/build-local-docker.sh",
+        "clean": "rm -rf dist node_modules",
+        "dev": "tsx src/index.ts",
+        "start": "node dist/index.js",
+        "start:local": "API_BASE_URL=https://ip-127-0-0-1.hereby.dev:4090 SIGNAL_BASE_URL=wss://ip-127-0-0-1.hereby.dev:4070 sh scripts/update-sdk-base-url.sh && yarn build && yarn start"
+    }
+}
