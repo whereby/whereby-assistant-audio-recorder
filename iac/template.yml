@@ -111,6 +111,14 @@ Resources:
                       Action: ["sts:AssumeRole"]
             Path: /
 
+    AutoScaling:
+        Type: AWS::Serverless::Application
+        Properties:
+            Location: ./autoscaling.yml
+            Parameters:
+                ClusterName: !Ref Cluster
+                ServiceName: !GetAtt Service.Name
+
 Outputs:
     ClusterName:
         Description: Amazon ECS Cluster Name
