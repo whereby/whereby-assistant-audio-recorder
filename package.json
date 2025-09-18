@@ -2,7 +2,7 @@
     "name": "whereby-assistant-audio-recorder",
     "version": "0.1.0",
     "private": true,
-    "main": "dist/index.js",
+    "main": "src/index.js",
     "dependencies": {
         "@aws-sdk/client-s3": "^3.888.0",
         "@whereby.com/assistant-sdk": "0.0.0-canary-20250923134558",
@@ -27,7 +27,7 @@
         "dev": "tsx src/index.ts",
         "lint": "npx eslint src/",
         "start": "node ./dist/index.js",
-        "start:local": "API_BASE_URL=https://ip-127-0-0-1.hereby.dev:4090 SIGNAL_BASE_URL=wss://ip-127-0-0-1.hereby.dev:4070 sh scripts/update-sdk-base-url.sh && yarn build && yarn start",
+        "start:local": "IS_LOCAL=true && API_BASE_URL=https://ip-127-0-0-1.hereby.dev:4090 SIGNAL_BASE_URL=wss://ip-127-0-0-1.hereby.dev:4070 sh scripts/update-sdk-base-url.sh && yarn build && yarn start",
         "aws:sam:init": "cd ./iac/base && sam build && sam deploy",
         "aws:sam:init:delete": "cd ./iac/base && sam delete",
         "aws:sam:build": "scripts/build-and-push-docker-image-to-aws-ecr.sh",
