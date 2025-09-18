@@ -11,14 +11,14 @@ ENV API_BASE_URL=${API_BASE_URL}
 ARG SIGNAL_BASE_URL
 ENV SIGNAL_BASE_URL=${SIGNAL_BASE_URL}
 
+ARG SERVICE_PORT=3000
+ENV SERVICE_PORT=${SERVICE_PORT}
+
 WORKDIR /opt
 
+# Install git and ffmpeg dependencies
 RUN apt-get update && apt-get install -y git ffmpeg libasound2 \
-  libasound2-plugins alsa-utils alsa-oss
-
-RUN groupadd wherebyassistantgroup \
-  && useradd -ms /bin/bash wherebyassistant \
-  && usermod -aG wherebyassistantgroup wherebyassistant
+    libasound2-plugins alsa-utils alsa-oss
 
 COPY ./package.json ./
 COPY ./yarn.lock ./
@@ -29,14 +29,10 @@ COPY ./scripts/update-sdk-base-url.sh ./scripts/
 RUN chmod +x ./scripts/update-sdk-base-url.sh
 RUN ./scripts/update-sdk-base-url.sh
 
-COPY ./dist/ ./dist
-
-RUN chown -R wherebyassistant:wherebyassistantgroup .
+COPY ./dist ./dist
 
 VOLUME /dev/shm:/dev/shm
 
-USER wherebyassistant
+EXPOSE ${SERVICE_PORT}
 
-EXPOSE 3000
-
-CMD ["yarn", "start"]
+ENTRYPOINT ["node", "/opt/dist/index.js"]

@@ -20,4 +20,4 @@ apiUrl="https://${stackAddress}:4090"
 signalUrl="wss://${stackAddress}:4070"
 
 echo "Building docker image with API_BASE_URL=$apiUrl SIGNAL_BASE_URL=$signalUrl"
-yarn build:docker --build-arg API_BASE_URL=$apiUrl --build-arg SIGNAL_BASE_URL=$signalUrl
+yarn build:docker -t audio_recorder:latest --build-arg API_BASE_URL=$apiUrl --build-arg SIGNAL_BASE_URL=$signalUrl
