@@ -27,6 +27,12 @@
         "dev": "tsx src/index.ts",
         "lint": "npx eslint src/",
         "start": "node ./dist/index.js",
-        "start:local": "API_BASE_URL=https://ip-127-0-0-1.hereby.dev:4090 SIGNAL_BASE_URL=wss://ip-127-0-0-1.hereby.dev:4070 sh scripts/update-sdk-base-url.sh && yarn build && yarn start"
+        "start:local": "API_BASE_URL=https://ip-127-0-0-1.hereby.dev:4090 SIGNAL_BASE_URL=wss://ip-127-0-0-1.hereby.dev:4070 sh scripts/update-sdk-base-url.sh && yarn build && yarn start",
+        "aws:sam:init": "cd ./iac/base && sam build && sam deploy",
+        "aws:sam:init:delete": "cd ./iac/base && sam delete",
+        "aws:sam:build": "scripts/build-and-push-docker-image-to-aws-ecr.sh",
+        "aws:sam:deploy": "cd ./iac && sam build && sam deploy",
+        "aws:sam:deploy:delete": "cd ./iac && sam delete",
+        "aws:sam:geturl": "aws cloudformation --region eu-west-1 describe-stacks --stack-name whereby-assistant-audio-recorder --query \"Stacks[0].Outputs[?OutputKey=='FQDN'].OutputValue\" --output text"
     }
 }
