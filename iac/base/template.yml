@@ -15,6 +15,12 @@ Resources:
             EmptyOnDelete: true
 
 Outputs:
+    RepositoryName:
+        Description: Name of the repo
+        Value: !Ref ECRRepo
+        Export:
+            Name:
+                "Fn::Sub": "${AWS::StackName}-RepositoryName"
     RepositoryUrl:
         Description: URL of the repo
         Value: !GetAtt ECRRepo.RepositoryUri

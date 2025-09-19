@@ -13,6 +13,10 @@ Parameters:
         Type: String
         Default: whereby-assistant-audio-recorder-base
 
+    DeploymentDatetime:
+        Description: Date and time of deployment. Also used to force re-deploy the included ECS task definition whenever 'yarn aws:sam:deploy' is called
+        Type: String
+
 Globals:
     Function:
         Timeout: 3
@@ -73,6 +77,19 @@ Resources:
                   Image: !Sub
                       - ${RepoUrl}:latest
                       - RepoUrl: !ImportValue "whereby-assistant-audio-recorder-base-RepositoryUri"
+                  Environment:
+                      - Name: DEPLOYMENT_DATETIME
+                        Value: !Ref DeploymentDatetime
+                      - Name: WHEREBY_ASSISTANT_KEY
+                        Value: !Sub "{{resolve:secretsmanager:${AWS::StackName}_WHEREBY_ASSISTANT_KEY:SecretString}}"
+                      - Name: AWS_S3_ACCESS_KEY_ID
+                        Value: !Sub "{{resolve:secretsmanager:${AWS::StackName}_AWS_S3_ACCESS_KEY_ID:SecretString}}"
+                      - Name: AWS_S3_SECRET_ACCESS_KEY
+                        Value: !Sub "{{resolve:secretsmanager:${AWS::StackName}_AWS_S3_SECRET_ACCESS_KEY:SecretString}}"
+                      - Name: AWS_S3_REGION
+                        Value: !Sub "{{resolve:secretsmanager:${AWS::StackName}_AWS_S3_REGION:SecretString}}"
+                      - Name: AWS_S3_BUCKET_NAME
+                        Value: !Sub "{{resolve:secretsmanager:${AWS::StackName}_AWS_S3_BUCKET_NAME:SecretString}}"
                   PortMappings:
                       - ContainerPort: 80
                   LogConfiguration:

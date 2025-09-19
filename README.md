@@ -40,9 +40,26 @@ The tooling provided will create a deployment that includes an AWS Load Balancer
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 * [AWS Serverless Application Model CLI (AWS SAM CLI)](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)).
 
+
+#### Create service secrets
+
+For our application to successfully connect to Whereby rooms and upload to S3 we need to configure some parameters for our deployment. For this purpose we will create these parameters in the [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).
+
+You will need to add a secret for every parameter included in the `.env.example` file.
+
+You can choose to either create these secrets yourself ([guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_secret.html)) or we can simply run the following to set up these parameters on the command line, replacing each `value` with its secret string:
+
+```sh
+./scripts/create-aws-secret.sh WHEREBY_ASSISTANT_KEY value
+./scripts/create-aws-secret.sh AWS_S3_ACCESS_KEY_ID value
+./scripts/create-aws-secret.sh AWS_S3_SECRET_ACCESS_KEY value
+./scripts/create-aws-secret.sh AWS_S3_REGION value
+./scripts/create-aws-secret.sh AWS_S3_BUCKET_NAME value
+```
+
 ### Define your infrastructure
 
-To begin, you will want to provision your base infrastructure. This will stand up your Amazon Elastic Container Registry (ECR) so you can build and push your container images.
+Once our initial application secrets have been created in the previous section, you will want to provision your base infrastructure. This will stand up your Amazon Elastic Container Registry (ECR) so you can build and push your container images.
 
 ```sh
 yarn aws:sam:init

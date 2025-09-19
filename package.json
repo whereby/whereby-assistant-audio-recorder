@@ -31,7 +31,7 @@
         "aws:sam:init": "cd ./iac/base && sam build && sam deploy",
         "aws:sam:init:delete": "cd ./iac/base && sam delete",
         "aws:sam:build": "scripts/build-and-push-docker-image-to-aws-ecr.sh",
-        "aws:sam:deploy": "cd ./iac && sam build && sam deploy",
+        "aws:sam:deploy": "cd ./iac && sam build && sam deploy --parameter-overrides DeploymentDatetime=`date '+%Y-%m-%dT%H:%M:%S'`",
         "aws:sam:deploy:delete": "cd ./iac && sam delete",
         "aws:sam:meta:endpointurl": "aws cloudformation --region eu-west-1 describe-stacks --no-cli-pager --stack-name whereby-assistant-audio-recorder --query \"Stacks[0].Outputs[?OutputKey=='FQDN'].OutputValue\" --output text",
         "aws:sam:meta:logs:tail": "sam logs --region eu-west-1 --cw-log-group /wherebyassistantaudiorecorder --tail"
