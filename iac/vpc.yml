@@ -242,7 +242,7 @@ Resources:
             Protocol: HTTP
             TargetGroupAttributes:
                 - Key: deregistration_delay.timeout_seconds
-                  Value: 0
+                  Value: 3600
             Port: 80
             TargetType: ip
             IpAddressType: ipv4
