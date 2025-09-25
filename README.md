@@ -1,6 +1,6 @@
 # Audio Recorder Whereby Assistant
 
-A Whereby Assistant implementation to generate audio-only recordings from room sessions.
+A [Whereby Assistant](https://docs.whereby.com/meeting-content-and-quality/assistants) implementation to generate audio-only recordings from room sessions.
 
 ## Installation
 
@@ -32,9 +32,9 @@ The tooling provided will create a deployment that includes an AWS Load Balancer
 
 ### Prerequisites
 
-* A Whereby Embedded Account and a Whereby Assistant Key value [docs.whereby coming soon]
+* A Whereby Embedded Account and a Whereby Assistant Key value ([setup guide](https://docs.whereby.com/meeting-content-and-quality/assistants))
 * An AWS Account and AWS admin credentials for deploying the service
-* AWS S3 bucket and credentials for writing audio recording files to S3 ([guide](https://whereby.com/blog/how-to-set-up-cloud-recording/))
+* AWS S3 bucket and credentials for writing audio recording files to S3 ([setup guide](https://whereby.com/blog/how-to-set-up-cloud-recording/))
 * Node 20+
 * [Docker](https://docs.docker.com/desktop/)
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
