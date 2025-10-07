@@ -1518,35 +1518,35 @@
     "@typescript-eslint/types" "8.44.0"
     eslint-visitor-keys "^4.2.1"
 
-"@whereby.com/assistant-sdk@0.0.0-canary-20250923134558":
-  version "0.0.0-canary-20250923134558"
-  resolved "https://registry.yarnpkg.com/@whereby.com/assistant-sdk/-/assistant-sdk-0.0.0-canary-20250923134558.tgz#ce7c9fe708a387c1ee43d555e86cbaaed7cee59b"
-  integrity sha512-gEdTr0MSDdToc6gulnvEL6ndiBVyBPbHy+3EcHY79aCb+O6mwwnFxyke8Ti4MeT29Z74k9wADEkjWtU0MSSR0g==
+"@whereby.com/assistant-sdk@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@whereby.com/assistant-sdk/-/assistant-sdk-1.1.0.tgz#fcd7186da85b69b0f30dc4780b6345c62fe25180"
+  integrity sha512-jHHj5S5XG0vokXX7HTVwl2R+50MsFweSa4SsPTW8UMZc5H1yL3jQuzVhByFBhOIFfl/b1SR6C5hQMxyPUUvWUA==
   dependencies:
     "@roamhq/wrtc" "github:whereby/node-webrtc#patch/rtc_audio_source"
     "@types/web" "^0.0.267"
-    "@whereby.com/core" "0.0.0-canary-20250923134558"
+    "@whereby.com/core" "1.2.0"
     body-parser "2.2.0"
     dotenv "^16.4.5"
     express "5.1.0"
     uuid "^11.0.3"
     ws "^8.18.0"
 
-"@whereby.com/core@0.0.0-canary-20250923134558":
-  version "0.0.0-canary-20250923134558"
-  resolved "https://registry.yarnpkg.com/@whereby.com/core/-/core-0.0.0-canary-20250923134558.tgz#a4f2c1701a319acfadf3860f4521280062615c60"
-  integrity sha512-YZVE6lBJxFySvUdUXHFyw76YOIn1j+aRtOoUqCL0C34SK6eXy0SGktEsGtcqmPzKUAAGAhmMZ63+sWIDbXDTrA==
+"@whereby.com/core@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@whereby.com/core/-/core-1.2.0.tgz#740dd2e7709524fb3d8283cab0655bafd334e41e"
+  integrity sha512-tNPMv4LKTENhxa2L5Da78RobS6Y41xEA07Oce6S3GDucCnctdhNKpuQ4+eZ3D4a+I+YNrr8nM/KLI6Ncv103Iw==
   dependencies:
     "@reduxjs/toolkit" "^2.2.3"
-    "@whereby.com/media" "0.0.0-canary-20250923134558"
+    "@whereby.com/media" "2.2.0"
     axios "^1.11.0"
     btoa "^1.2.1"
     events "^3.3.0"
 
-"@whereby.com/media@0.0.0-canary-20250923134558":
-  version "0.0.0-canary-20250923134558"
-  resolved "https://registry.yarnpkg.com/@whereby.com/media/-/media-0.0.0-canary-20250923134558.tgz#e0c7c8daa43aaebb7d94c53df025c85524bdfed5"
-  integrity sha512-+JJVkFhUIhg4Adedm/dt8wOSyv0SaSMCxsRziqD92QM0IP9QGgLNxVE8Sa/oDOxE/LH/csYrAC2ulyBdW8qVDw==
+"@whereby.com/media@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@whereby.com/media/-/media-2.2.0.tgz#bafa8207dd112aefb80a0bd8d1f3e304f6c90a26"
+  integrity sha512-8CRKE4q+FON409QyZHty5gJ/EIPTuhSJrMYRokbr/DnSWKYZaANbtU8RV6FCY2I3Few5cV8V/pWQYdAGse8oUg==
   dependencies:
     check-ip "^1.1.1"
     events "^3.3.0"

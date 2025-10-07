@@ -5,7 +5,7 @@
     "main": "src/index.js",
     "dependencies": {
         "@aws-sdk/client-s3": "^3.888.0",
-        "@whereby.com/assistant-sdk": "0.0.0-canary-20250923134558",
+        "@whereby.com/assistant-sdk": "1.1.0",
         "dotenv": "^16.4.5"
     },
     "devDependencies": {
