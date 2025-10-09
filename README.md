@@ -12,17 +12,23 @@ yarn install
 
 Copy `.env.example` to `.env` and then add a `WHEREBY_ASSISTANT_KEY` value. This value can be obtained from the Whereby Embedded Admin Dashboard. Optionally, you should also configure the `AWS_S3_*` values to upload audio recordings to an S3 bucket on exit.
 
-Then start the assistant on your local machine with:
+You can build the latest `/src` with:
+
+```
+yarn build
+```
+
+Then, start the built assistant on your local machine with:
 
 ```
 yarn start
 ```
 
-To start assistant running on local-stack (Whereby internal tooling only) use:
+### Receiving Whereby webhook events on localhost
 
-```
-yarn start:local
-```
+If you are running/testing this project on your local machine, to then be able to receive [Whereby webhook events](https://docs.whereby.com/meeting-content-and-quality/insights-suite-and-api/webhooks) for the implemented assistant trigger code you will need to start a tunneling endpoint with e.g. [ngrok](https://ngrok.com/) (`ngrok http http://localhost:3000`).
+
+Once this tunnel is started, you can copy the tunnel HTTPS URL as the Endpoint URL for a new or existing Assistant in your Whereby Dashboard and webhook events should then reach this assistant from Whereby.
 
 ## Build and Deploy to AWS
 
