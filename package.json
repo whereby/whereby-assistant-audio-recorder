@@ -5,7 +5,7 @@
     "main": "src/index.js",
     "dependencies": {
         "@aws-sdk/client-s3": "^3.888.0",
-        "@whereby.com/assistant-sdk": "1.1.0",
+        "@whereby.com/assistant-sdk": "1.2.5",
         "dotenv": "^16.4.5"
     },
     "devDependencies": {

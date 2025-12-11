@@ -830,40 +830,41 @@
     redux-thunk "^3.1.0"
     reselect "^5.1.0"
 
-"@roamhq/wrtc-darwin-arm64@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-darwin-arm64/-/wrtc-darwin-arm64-0.8.0.tgz#15057e6b8f57e4d1b7008a9d848b6f2036adbb24"
-  integrity sha512-OtV2KWO7zOG3L8TF3KCt9aucynVCD/ww2xeXXgg+FLkya3ca0uzehN8EQJ3BL4tkInksbFJ2ssyu9cehfJ3ZuA==
+"@roamhq/wrtc-darwin-arm64@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-darwin-arm64/-/wrtc-darwin-arm64-0.9.1.tgz#b8602671763bc6d5ab67cd9446d88145154d971a"
+  integrity sha512-+g0+nLeZrsAeuzD663y9wbkRns8s/u5nMt/swiUa0G0mQaIRc7zSe77gRGd3E4lMgQ2VyUMV607SCM1OjVdmyg==
 
-"@roamhq/wrtc-darwin-x64@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-darwin-x64/-/wrtc-darwin-x64-0.8.0.tgz#e09137b5a7edf2c2412bc63f1da1893dcaa211fd"
-  integrity sha512-VY7Vzt/SDDDCpW//h8GW9bOZrOr8gWXPZVD9473ypl4jyBIoO57yyLbHzd1G0vBUkS6szsHlQCz1WwpI30YL+g==
+"@roamhq/wrtc-darwin-x64@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-darwin-x64/-/wrtc-darwin-x64-0.9.1.tgz#201b4dba9868e9cf4e299349f4106b49c503b7db"
+  integrity sha512-W24zSe9s6c9Tu1owP8RHg7xqW/JRMl6TRAf8pLWGgXuIeI79jVx1A9MvKTlwLM4AAZmWY0rMHYOzJg6aTb+qkQ==
 
-"@roamhq/wrtc-linux-arm64@0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-linux-arm64/-/wrtc-linux-arm64-0.8.1.tgz#9a5f3297de44fcec86713d0baefa0594658ab71e"
-  integrity sha512-FBJLLazlWkGQUXaokC/rTbrUQbb0CNFYry52fZGstufrGLTWu+g4HcwXdVvxh1tnVtVMvkQGk+mlOL52sCxw0A==
+"@roamhq/wrtc-linux-arm64@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-linux-arm64/-/wrtc-linux-arm64-0.9.1.tgz#c35b67304dcc16b25ab832d709d24e64fd8aa59a"
+  integrity sha512-PeXkYGNcojjXvpHbI+R/YIUUkTWVrFaS5iQD55iGYbGBcBzU23wzpK0x/TvCQ0Ok4gimK985tgHKimbsVrs2Yw==
 
-"@roamhq/wrtc-linux-x64@0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-linux-x64/-/wrtc-linux-x64-0.8.1.tgz#3c5b60ca6cc6ebf5c2389d852f4a101135031da2"
-  integrity sha512-I9oWG7b4uvWO1IOR/aF34n+ID6TKVuSs0jd19h5KdhfRtw7FFh9xxuwN9rONPxLVa6fS0q+MCZgAf8Scz89L8Q==
+"@roamhq/wrtc-linux-x64@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-linux-x64/-/wrtc-linux-x64-0.9.1.tgz#58fdab71e2ccd2e6d5b0c47c97932b5fa6680c87"
+  integrity sha512-LuhzPdMM3i8vs/ifdj1F1pjpX2OhJSCWdh03UQXjRHoX+Fi1oJXiZRwKoVKu1BbsKCYfJ8m9jZB1ZU4Lhi8yHw==
 
-"@roamhq/wrtc-win32-x64@0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-win32-x64/-/wrtc-win32-x64-0.8.0.tgz#582e2478df48201d5757b60dcd4b4dcc40a054b7"
-  integrity sha512-R2fxl41BLWPiP4eaTHGLzbbVvRjx1mV/OsgINCvawO7Hwz5Zx9I45+Fhrw3hd4n5amIeSG9VIF7Kz8eeTFXTGQ==
+"@roamhq/wrtc-win32-x64@0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@roamhq/wrtc-win32-x64/-/wrtc-win32-x64-0.9.1.tgz#4443aa7cf1453c8e8e3b404997cda823b64a36cd"
+  integrity sha512-xyxqCpHxp71MY/3LaFTj3WDvOnu8GaDht1M0LAIGamwkQUg45X/zkzbfeIS7g8f/ZvItAjFa6cUkSUuhK3/rGg==
 
-"@roamhq/wrtc@github:whereby/node-webrtc#patch/rtc_audio_source":
-  version "0.8.0"
-  resolved "https://codeload.github.com/whereby/node-webrtc/tar.gz/cd43d297d7c2ac8b4739644d40d3a5702867b8dd"
+"@roamhq/wrtc@^0.9.1":
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/@roamhq/wrtc/-/wrtc-0.9.1.tgz#2f7de58d5967a2dffbae4ed23cf63ddf6da3d46c"
+  integrity sha512-WQH9DaN3kGv9+wxeRtxkSykmVQWl44VTX9XsMLmR5jtcsGxin+72U9uGlDjME0gwNNBHDKY3CgUGYI8ZYg8Jdw==
   optionalDependencies:
-    "@roamhq/wrtc-darwin-arm64" "0.8.0"
-    "@roamhq/wrtc-darwin-x64" "0.8.0"
-    "@roamhq/wrtc-linux-arm64" "0.8.1"
-    "@roamhq/wrtc-linux-x64" "0.8.1"
-    "@roamhq/wrtc-win32-x64" "0.8.0"
+    "@roamhq/wrtc-darwin-arm64" "0.9.1"
+    "@roamhq/wrtc-darwin-x64" "0.9.1"
+    "@roamhq/wrtc-linux-arm64" "0.9.1"
+    "@roamhq/wrtc-linux-x64" "0.9.1"
+    "@roamhq/wrtc-win32-x64" "0.9.1"
     domexception "^4.0.0"
 
 "@smithy/abort-controller@^4.1.1":
@@ -1518,35 +1519,35 @@
     "@typescript-eslint/types" "8.44.0"
     eslint-visitor-keys "^4.2.1"
 
-"@whereby.com/assistant-sdk@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@whereby.com/assistant-sdk/-/assistant-sdk-1.1.0.tgz#fcd7186da85b69b0f30dc4780b6345c62fe25180"
-  integrity sha512-jHHj5S5XG0vokXX7HTVwl2R+50MsFweSa4SsPTW8UMZc5H1yL3jQuzVhByFBhOIFfl/b1SR6C5hQMxyPUUvWUA==
+"@whereby.com/assistant-sdk@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@whereby.com/assistant-sdk/-/assistant-sdk-1.2.5.tgz#ef48ab21e1552331b5f0be06ffa555ab85e2f68a"
+  integrity sha512-EbHQZtC/TUgRos0bnqAE/D6V+z9u0gwQBHb7oauTcAkhBI4RWQ2Ed67FSZc74EhDf+5d+6XXEq4VlcsKvBdMcQ==
   dependencies:
-    "@roamhq/wrtc" "github:whereby/node-webrtc#patch/rtc_audio_source"
+    "@roamhq/wrtc" "^0.9.1"
     "@types/web" "^0.0.267"
-    "@whereby.com/core" "1.2.0"
+    "@whereby.com/core" "1.5.0"
     body-parser "2.2.0"
     dotenv "^16.4.5"
     express "5.1.0"
     uuid "^11.0.3"
     ws "^8.18.0"
 
-"@whereby.com/core@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@whereby.com/core/-/core-1.2.0.tgz#740dd2e7709524fb3d8283cab0655bafd334e41e"
-  integrity sha512-tNPMv4LKTENhxa2L5Da78RobS6Y41xEA07Oce6S3GDucCnctdhNKpuQ4+eZ3D4a+I+YNrr8nM/KLI6Ncv103Iw==
+"@whereby.com/core@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@whereby.com/core/-/core-1.5.0.tgz#6be3730cafc91a77f0e7f0b7f553b5b8dfb61b26"
+  integrity sha512-3tC8Iyq1PvOSIU6u9lUC9jKu77RtxAoCh3d4/IXvBpYVOL8YPKVgj9cNF92eaTkSSObeY56jeiSCxbfkPn34Gg==
   dependencies:
     "@reduxjs/toolkit" "^2.2.3"
-    "@whereby.com/media" "2.2.0"
+    "@whereby.com/media" "2.6.1"
     axios "^1.11.0"
     btoa "^1.2.1"
     events "^3.3.0"
 
-"@whereby.com/media@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@whereby.com/media/-/media-2.2.0.tgz#bafa8207dd112aefb80a0bd8d1f3e304f6c90a26"
-  integrity sha512-8CRKE4q+FON409QyZHty5gJ/EIPTuhSJrMYRokbr/DnSWKYZaANbtU8RV6FCY2I3Few5cV8V/pWQYdAGse8oUg==
+"@whereby.com/media@2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@whereby.com/media/-/media-2.6.1.tgz#45418fc2f8d5771c325bd9cf8ddd3f3b3ad42848"
+  integrity sha512-hbAREhCd2JYowiK1FEFUu+pL2LBAuYcocOwiBnOTHTnlzua1gb4ym+QZHu+rPWQ4/RaWz6ughn72L9aqNwBdsA==
   dependencies:
     check-ip "^1.1.1"
     events "^3.3.0"
