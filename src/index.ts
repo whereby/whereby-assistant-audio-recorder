@@ -11,6 +11,11 @@ const roomState: Record<string, boolean> = {};
 
 const trigger = new Trigger({
     webhookTriggers: {
+        "assistant.requested": ({ data: { subdomain, roomName } }) => {
+            const roomStateKey = `${subdomain}${roomName}`;
+
+            return !roomState[roomStateKey];
+        },
         "room.session.started": ({ data: { subdomain, roomName } }) => {
             const roomStateKey = `${subdomain}${roomName}`;
 
@@ -125,24 +130,6 @@ trigger.on(
 
             if (ffmpegProcess) {
                 ffmpegProcess.stdin.end();
-            }
-        });
-
-        const roomConnection = assistant.getRoomConnection();
-
-        // If less than 2 human participants remain in a room, stop recording audio
-        const unsubscribeFromRemoteParticipants = roomConnection.subscribeToRemoteParticipants((remoteParticipants) => {
-            const humanParticipants = remoteParticipants.filter(({ roleName }) =>
-                ["owner", "member", "host", "visitor", "granted_visitor", "viewer", "granted_viewer"].includes(
-                    roleName,
-                ),
-            );
-
-            if (humanParticipants.length <= 1) {
-                unsubscribeFromRemoteParticipants();
-
-                console.log("Assistant leaving the room");
-                roomConnection.leaveRoom();
             }
         });
     },
